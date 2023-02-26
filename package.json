@@ -1,5 +1,5 @@
 {
-  "name": "tra-template",
+  "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,14 +9,31 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.5",
+    "@react-navigation/native-stack": "^6.9.11",
+    "axios": "^1.3.3",
     "expo": "~47.0.12",
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
+    "express": "^4.18.2",
     "react": "18.1.0",
-    "react-native": "0.70.5"
+    "react-native": "0.70.5",
+    "react-native-safe-area-context": "^4.5.0",
+    "react-native-screens": "^3.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "description": "backend code",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drew-deister/TRA-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drew-deister/TRA-template/issues"
+  },
+  "homepage": "https://github.com/drew-deister/TRA-template#readme"
 }
