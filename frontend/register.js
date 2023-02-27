@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Linking } from 'react-native';
 
-const LoginPage = ({navigation}) => {
+const RegisterPage = ({navigation}) => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // Handle login logic here
+  const handleRegister = () => {
+    // Handle register logic here
   };
 
   return (
@@ -14,6 +16,22 @@ const LoginPage = ({navigation}) => {
       <View style={styles.fieldContainer}>
         <Image source={require('./public/TRA-logo.png')} style={styles.logo}/>
         <Text style={styles.title}>Tennessee Resettlement Aid</Text>
+        <View style={styles.nameView}>
+          <TextInput
+            style={styles.nameInput}
+            placeholder="First name"
+            onChangeText={setFirstName}
+            value={firstName}
+            autoCapitalize="none"
+          />
+          <TextInput
+            style={styles.nameInput}
+            placeholder="Last name"
+            onChangeText={setLastName}
+            value={lastName}
+            autoCapitalize="none"
+          />
+        </View>
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -28,16 +46,17 @@ const LoginPage = ({navigation}) => {
           value={password}
           secureTextEntry={true}
         />
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <TouchableOpacity style={styles.button} onPress={handleRegister}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <View style={styles.divider}/>
-        <View style={styles.signupView}>
-          <Text>Don't have account yet?</Text>
-          <Text style={styles.signupText} onPress={() => navigation.navigate("Register")}>Sign Up</Text>
+        <View style={styles.loginView}>
+          <Text>Already have an account?</Text>
+          <Text style={styles.loginText} onPress={() => navigation.navigate("Login")}>Log in</Text>
         </View>
-      </View>   
+      </View>
     </View>
+      
   );
 };
 
@@ -62,6 +81,18 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginVertical: 16,
   },
+  nameView: {
+    flexDirection: 'row',
+    marginVertical: 16,
+  },
+  nameInput: {
+    borderRadius: 4,
+    padding: 4,
+    width: '50%',
+    fontSize: 16,
+    shadowRadius: 40,
+    borderBottomWidth: 1,
+  },
   input: {
     borderRadius: 4,
     padding: 4,
@@ -85,11 +116,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: 'rgb(220, 220, 220)'
   },
-  signupView: {
+  loginView: {
     flexDirection: 'row',
     marginVertical: 12,
   },
-  signupText: {
+  loginText: {
     fontWeight: 'bold',
     color: 'rgb(22, 73, 176)',
     marginHorizontal: 4,
@@ -101,4 +132,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginPage;
+export default RegisterPage;
