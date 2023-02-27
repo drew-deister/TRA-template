@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Linking } from 'react-native';
+import { View, ScrollView, Text, TextInput, TouchableOpacity, StyleSheet, Image, Linking } from 'react-native';
 
 const RegisterPage = ({navigation}) => {
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmedPassword, setConfirmedPassword] = useState('');
+
 
   const handleRegister = () => {
     // Handle register logic here
+    // need to check that passwords match
   };
 
   return (
-    <View style={styles.screen}>
+    <ScrollView style={styles.scrollContainer}>
       <View style={styles.fieldContainer}>
         <Image source={require('./public/TRA-logo.png')} style={styles.logo}/>
         <Text style={styles.title}>Tennessee Resettlement Aid</Text>
@@ -41,13 +47,37 @@ const RegisterPage = ({navigation}) => {
         />
         <TextInput
           style={styles.input}
+          placeholder="Address"
+          onChangeText={setAddress}
+          value={address}
+          autoCapitalize="none"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Username"
+          onChangeText={setUsername}
+          value={username}
+          autoCapitalize="none"
+          secureTextEntry={true}
+        />
+        <TextInput
+          style={styles.input}
           placeholder="Password"
           onChangeText={setPassword}
           value={password}
+          autoCapitalize="none"
+          secureTextEntry={true}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Confirm password"
+          onChangeText={setConfirmedPassword}
+          value={confirmedPassword}
+          autoCapitalize="none"
           secureTextEntry={true}
         />
         <TouchableOpacity style={styles.button} onPress={handleRegister}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
         <View style={styles.divider}/>
         <View style={styles.loginView}>
@@ -55,8 +85,7 @@ const RegisterPage = ({navigation}) => {
           <Text style={styles.loginText} onPress={() => navigation.navigate("Login")}>Log in</Text>
         </View>
       </View>
-    </View>
-      
+    </ScrollView>
   );
 };
 
@@ -67,15 +96,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#fff',
   },
+  scrollContainer: {
+    flex: 1,
+    alignSelf: 'center', // scrollView is weird, you can't use alignItems or justifyContent
+    backgroundColor: '#fff',
+  },
   fieldContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: '80%',
+    marginHorizontal: 30,
   },
   logo: {
     width: 100,
     height: 100,
-    marginVertical: 16,
+    marginTop: 16,
   },
   title: {
     fontSize: 22,
@@ -118,7 +152,8 @@ const styles = StyleSheet.create({
   },
   loginView: {
     flexDirection: 'row',
-    marginVertical: 12,
+    marginTop: 12,
+    marginBottom: 24,
   },
   loginText: {
     fontWeight: 'bold',

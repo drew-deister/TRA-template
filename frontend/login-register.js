@@ -5,9 +5,13 @@ const LoginRegisterPage = ({navigation}) => {
 
   return (
     <View style={styles.container}>
+      <Image source={require('./public/TRA-logo.png')} style={styles.logo}/>
       <Text style={styles.title}>Tennessee Resettlement Aid</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
-        <Text style={styles.buttonText}>Go to Login!</Text>
+      <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate("Login")}>
+        <Text style={styles.loginButtonText}>Go to Login!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.registerButton} onPress={() => navigation.navigate("Register")}>
+        <Text style={styles.registerButtonText}>Go to Register!</Text>
       </TouchableOpacity>
     </View>
   );
@@ -26,16 +30,37 @@ const styles = StyleSheet.create({
     // fontFamily: 'monospace',
     // https://stackoverflow.com/questions/53329578/react-native-expo-fontfamily-simplelineicons-is-not-a-system-font-and-has-n
   },
-  button: {
-    backgroundColor: 'rgb(22, 73, 176)',
-    borderRadius: 6,
+  logo: {
+    width: 100,
+    height: 100,
+    marginTop: 16,
+  },
+  loginButton: {
+    borderColor: 'rgb(22, 73, 176)',
+    borderRadius: 12,
+    borderWidth: 1,
     padding: 12,
     width: 300,
     alignItems: 'center',
     marginVertical: 12, 
   },
-  buttonText: {
-    color: '#fff',
+  registerButton: {
+    backgroundColor: 'rgb(22, 73, 176)',
+    borderWidth: 1, 
+    borderColor: 'rgb(22, 73, 176)',
+    borderRadius: 12,
+    padding: 12,
+    width: 300,
+    alignItems: 'center',
+    marginVertical: 12, 
+  },
+  loginButtonText: {
+    color: '#1649B0',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  registerButtonText: {
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
   },
