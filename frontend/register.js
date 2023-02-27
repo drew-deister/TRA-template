@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   button: {
-    backgroundColor: 'rgb(22, 73, 176)',
+    backgroundColor: 'rgb(12, 13, 67)',
     borderRadius: 6,
     padding: 12,
     width: 300,
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
   loginText: {
     fontWeight: 'bold',
-    color: 'rgb(22, 73, 176)',
+    color: '#0c0d43',
     marginHorizontal: 4,
   },
   buttonText: {

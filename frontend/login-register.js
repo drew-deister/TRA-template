@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   loginButton: {
-    borderColor: 'rgb(22, 73, 176)',
+    borderColor: 'rgb(12, 13, 67)',
     borderRadius: 12,
     borderWidth: 1,
     padding: 12,
@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
     marginVertical: 12, 
   },
   registerButton: {
-    backgroundColor: 'rgb(22, 73, 176)',
+    backgroundColor: 'rgb(12, 13, 67)',
     borderWidth: 1, 
-    borderColor: 'rgb(22, 73, 176)',
+    borderColor: 'rgb(12, 13, 67)',
     borderRadius: 12,
     padding: 12,
     width: 300,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     marginVertical: 12, 
   },
   loginButtonText: {
-    color: '#1649B0',
+    color: '#0c0d43',
     fontWeight: 'bold',
     fontSize: 16,
   },
