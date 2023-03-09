@@ -16,26 +16,25 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   
-  useEffect(() => {
-    fetch(`http://192.168.10.112:5002/hello`) // change this
-      .then(res => res.text()) // gets the response object in this case in the form of text (could be json)
-      .then(data => setMessage(data)) // here you could .property
-      .catch(err=>{console.log(err)})
-  }, [])
+  // useEffect(() => {
+  //   fetch(`http://192.168.10.112:5002/hello`) // change this
+  //     .then(res => res.text()) // gets the response object in this case in the form of text (could be json)
+  //     .then(data => setMessage(data)) // here you could .property
+  //     .catch(err=>{console.log(err)})
+  // }, [])
 
-  useEffect(() => {
-    fetch(`http://192.168.10.112:5002/lyrics/2`) // change this
-      .then(res => res.json()) // gets the response object in this case in the form of text (could be json)
-      .then(data => setLyrics(data[0])) // here you could .property
-      .catch(err=>{console.log(err)})
-  }, [])
+  // useEffect(() => {
+  //   fetch(`http://192.168.10.112:5002/lyrics/2`) // change this
+  //     .then(res => res.json()) // gets the response object in this case in the form of text (could be json)
+  //     .then(data => setLyrics(data[0])) // here you could .property
+  //     .catch(err=>{console.log(err)})
+  // }, [])
 
   return (
     <Stack.Navigator initialRouteName="LoginRegister">
       <Stack.Screen name="LoginRegister" component={LoginRegisterPage}/>
       <Stack.Screen name="Login" component={LoginPage}/>
       <Stack.Screen name="Register" component={RegisterPage}/>
-      {/* <StatusBar style="auto" /> */}
     </Stack.Navigator>
   );
 }

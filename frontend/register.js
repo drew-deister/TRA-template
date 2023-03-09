@@ -26,6 +26,7 @@ const RegisterPage = ({navigation}) => {
           <TextInput
             style={styles.nameInput}
             placeholder="First name"
+            placeholderTextColor={"gray"}
             onChangeText={setFirstName}
             value={firstName}
             autoCapitalize="none"
@@ -33,6 +34,7 @@ const RegisterPage = ({navigation}) => {
           <TextInput
             style={styles.nameInput}
             placeholder="Last name"
+            placeholderTextColor={"gray"}
             onChangeText={setLastName}
             value={lastName}
             autoCapitalize="none"
@@ -41,6 +43,7 @@ const RegisterPage = ({navigation}) => {
         <TextInput
           style={styles.input}
           placeholder="Email"
+          placeholderTextColor={"gray"}
           onChangeText={setEmail}
           value={email}
           autoCapitalize="none"
@@ -48,6 +51,7 @@ const RegisterPage = ({navigation}) => {
         <TextInput
           style={styles.input}
           placeholder="Address"
+          placeholderTextColor={"gray"}
           onChangeText={setAddress}
           value={address}
           autoCapitalize="none"
@@ -55,6 +59,7 @@ const RegisterPage = ({navigation}) => {
         <TextInput
           style={styles.input}
           placeholder="Username"
+          placeholderTextColor={"gray"}
           onChangeText={setUsername}
           value={username}
           autoCapitalize="none"
@@ -63,6 +68,7 @@ const RegisterPage = ({navigation}) => {
         <TextInput
           style={styles.input}
           placeholder="Password"
+          placeholderTextColor={"gray"}
           onChangeText={setPassword}
           value={password}
           autoCapitalize="none"
@@ -71,6 +77,7 @@ const RegisterPage = ({navigation}) => {
         <TextInput
           style={styles.input}
           placeholder="Confirm password"
+          placeholderTextColor={"gray"}
           onChangeText={setConfirmedPassword}
           value={confirmedPassword}
           autoCapitalize="none"

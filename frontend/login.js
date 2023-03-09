@@ -17,6 +17,7 @@ const LoginPage = ({navigation}) => {
         <TextInput
           style={styles.input}
           placeholder="Email"
+          placeholderTextColor={"gray"}
           onChangeText={setEmail}
           value={email}
           autoCapitalize="none"
@@ -24,6 +25,7 @@ const LoginPage = ({navigation}) => {
         <TextInput
           style={styles.input}
           placeholder="Password"
+          placeholderTextColor={"gray"}
           onChangeText={setPassword}
           value={password}
           secureTextEntry={true}
